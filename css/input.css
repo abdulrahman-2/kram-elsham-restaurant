@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
+
+body {
+  font-family: "Almarai", sans-serif;
+}
+
+@theme {
+  --color-primary: #592f16;
+  --color-secondary: #f5f5f5;
+  --spacing-default: 70px;
+  --radius-default: 16px;
+  --shadow-default: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-default-inset: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@layer base {
+  .container {
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+@layer utilities {
+  .hover-link {
+    @apply relative hover:text-primary transition duration-200 before:absolute before:content-[''] before:w-0 before:h-1 before:-bottom-[5px] before:bg-primary before:transition-all before:duration-300 hover:before:w-full;
+  }
+}

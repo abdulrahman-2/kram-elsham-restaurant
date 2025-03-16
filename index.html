@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/output.css" />
+    <title>KARAM ELSHAM</title>
+  </head>
+  <body>
+    <div id="root" dir="rtl">
+      <header class="shadow sticky top-0">
+        <div class="container flex items-center justify-between h-16">
+          <div class="flex items-center gap-2">
+            <img
+              src="images/logo.png"
+              class="size-10 rounded-full"
+              alt="logo"
+            />
+            <h1 class="text-2xl italic font-bold">كرم الشام</h1>
+          </div>
+          <nav class="">
+            <ul
+              class="hidden md:flex flex-col gap-5 md:flex-row font-semibold text-xl"
+            >
+              <a class="hover-link" href="/" onclick="route()">الرئيسية</a>
+              <a class="hover-link" href="/about" onclick="route()">من نحن</a>
+              <a class="hover-link" href="/contact" onclick="route()"
+                >اتصل بنا</a
+              >
+              <a class="hover-link" href="/menu" onclick="route()"
+                >قائمة الطعام</a
+              >
+            </ul>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-menu md:hidden"
+            >
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </nav>
+        </div>
+      </header>
+
+      <div id="main"></div>
+
+      <footer>
+        <p>Copyright &copy; 2023 KARAM ELSHAM</p>
+      </footer>
+    </div>
+    <script src="js/route.js"></script>
+  </body>
+</html>
