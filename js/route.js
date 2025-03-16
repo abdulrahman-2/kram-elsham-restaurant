@@ -8,7 +8,7 @@ const route = (e) => {
 
 const routes = {
   404: "/pages/404.html",
-  "/": "/pages/index.html",
+  "/": "/pages/home.html",
   "/about": "/pages/about.html",
   "/contact": "/pages/contact.html",
   "/menu": "/pages/menu.html",
@@ -17,7 +17,7 @@ const routes = {
 const handleLocation = async () => {
   const path = window.location.pathname;
   const route = routes[path] || routes[404];
-  const html = await fetch(route).then((data) => data.text());
+  const html = await fetch(route).then((res) => res.text());
   document.getElementById("main").innerHTML = html;
 };
 
