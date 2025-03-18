@@ -24,6 +24,6 @@ body {
 
 @layer utilities {
   .hover-link {
-    @apply relative hover:text-primary transition duration-200 before:absolute before:content-[''] before:w-0 before:h-1 before:-bottom-[5px] before:bg-primary before:transition-all before:duration-300 hover:before:w-full;
+    @apply relative hover:text-secondary transition duration-200 before:absolute before:content-[''] before:w-0 before:h-1 before:-bottom-[5px] before:bg-primary before:transition-all before:duration-300 hover:before:w-full;
   }
 }

@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>KARAM ELSHAM</title>
   </head>
   <body>
-    <div id="root" dir="rtl">
-      <header class="shadow sticky top-0">
-        <div class="container flex items-center justify-between h-16">
+    <div
+      id="root"
+      dir="rtl"
+      class="bg-secondary flex flex-col min-h-screen justify-between"
+    >
+      <header class="shadow sticky top-0 z-50 bg-primary text-white">
+        <div class="container flex items-center justify-between h-[75px]">
           <div class="flex items-center gap-2">
             <img
               src="images/logo.png"
@@ -41,7 +46,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-menu md:hidden"
+              class="lucide lucide-menu md:hidden cursor-pointer"
             >
               <line x1="4" x2="20" y1="12" y2="12" />
               <line x1="4" x2="20" y1="6" y2="6" />
@@ -53,10 +58,11 @@
 
       <div id="main"></div>
 
-      <footer>
-        <p>Copyright &copy; 2023 KARAM ELSHAM</p>
+      <footer class="bg-primary font-semibold text-white text-center py-5">
+        <p>حقوق النشر &copy; 2023 كرم الشام</p>
       </footer>
     </div>
-    <script src="js/route.js"></script>
+    <script src="js/route.js" type="module"></script>
+    <script src="js/data.js" type="module"></script>
   </body>
 </html>

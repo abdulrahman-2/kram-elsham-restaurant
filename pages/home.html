@@ -3,9 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <title>Home</title>
   </head>
   <body>
-    <h1>Home</h1>
+    <div id="home">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../images/banners/banner_1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/banners/banner_2.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/banners/banner_3.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../images/banners/banner_4.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="py-default">
+        <div class="container">
+          <h2 class="section-title">منتجاتنا</h2>
+          <div
+            id="products-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+          ></div>
+          <!-- pagination -->
+          <div class="pagination mt-10 flex justify-center items-center gap-2">
+            <button
+              class="btn bg-primary rounded-xl p-3 text-white font-semibold"
+              id="prev"
+            >
+              السابق
+            </button>
+            <span
+              class="bg-primary rounded-xl size-10 grid place-content-center text-white font-semibold"
+              >1</span
+            >
+            <span
+              class="bg-primary rounded-xl size-10 grid place-content-center text-white font-semibold"
+              >2</span
+            >
+            <button
+              class="bg-primary rounded-xl p-3 text-white font-semibold"
+              id="next"
+            >
+              التالي
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </html>
