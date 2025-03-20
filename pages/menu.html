@@ -4,8 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MENU</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <h1>MENU</h1>
+    <div class="container my-10">
+      <h1 class="section-title">MENU</h1>
+
+      <!-- Filter Buttons -->
+      <div id="filter-container" class="flex justify-center flex-wrap my-5">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Fast Food">Fast Food</button>
+        <button class="filter-btn" data-filter="Japanese">Japanese</button>
+        <button class="filter-btn" data-filter="Italian">Italian</button>
+        <button class="filter-btn" data-filter="Grill">Grill</button>
+        <button class="filter-btn" data-filter="Dessert">Dessert</button>
+      </div>
+
+      <!-- Meals List -->
+      <div
+        id="products-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+      ></div>
+
+      <!-- pagination -->
+      <div class="pagination mt-10 flex justify-center items-center gap-2">
+        <button
+          class="btn bg-primary rounded-xl p-3 text-white font-semibold"
+          id="prev"
+        >
+          السابق
+        </button>
+        <span
+          class="bg-primary rounded-xl size-10 grid place-content-center text-white font-semibold"
+          >1</span
+        >
+        <span
+          class="bg-primary rounded-xl size-10 grid place-content-center text-white font-semibold"
+          >2</span
+        >
+        <button
+          class="bg-primary rounded-xl p-3 text-white font-semibold"
+          id="next"
+        >
+          التالي
+        </button>
+      </div>
+    </div>
   </body>
 </html>

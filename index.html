@@ -23,20 +23,30 @@
             />
             <h1 class="text-2xl italic font-bold">كرم الشام</h1>
           </div>
-          <nav class="">
+          <nav class="relative">
+            <!-- Desktop Menu -->
             <ul
               class="hidden md:flex flex-col gap-5 md:flex-row font-semibold text-xl"
             >
-              <a class="hover-link" href="/" onclick="route()">الرئيسية</a>
+              <a class="hover-link" href="/" onclick="route()">الرئيسية</a>
               <a class="hover-link" href="/about" onclick="route()">من نحن</a>
               <a class="hover-link" href="/contact" onclick="route()"
                 >اتصل بنا</a
               >
               <a class="hover-link" href="/menu" onclick="route()"
-                >قائمة الطعام</a
+                >قائمة الطعام</a
+              >
+              <a class="hover-link relative" href="/cart" onclick="route()">
+                <span
+                  id="cart-count"
+                  class="absolute -top-5 -left-4 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center"
+                  >0</span
+                >السلة</a
               >
             </ul>
+            <!-- Mobile Menu Button -->
             <svg
+              id="menu-toggle"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -52,6 +62,43 @@
               <line x1="4" x2="20" y1="6" y2="6" />
               <line x1="4" x2="20" y1="18" y2="18" />
             </svg>
+            <!-- Mobile Menu Dropdown -->
+            <div
+              id="mobile-menu"
+              class="hidden md:hidden absolute top-12 left-[260px] -translate-x-1/2 bg-primary shadow-lg rounded-b-lg w-[500px]"
+            >
+              <ul
+                class="flex flex-col gap-4 p-4 font-semibold text-xl text-center"
+              >
+                <li>
+                  <a class="hover-link" href="/" onclick="route()">الرئيسية</a>
+                </li>
+                <li>
+                  <a class="hover-link" href="/about" onclick="route()"
+                    >من نحن</a
+                  >
+                </li>
+                <li>
+                  <a class="hover-link" href="/contact" onclick="route()"
+                    >اتصل بنا</a
+                  >
+                </li>
+                <li>
+                  <a class="hover-link" href="/menu" onclick="route()"
+                    >قائمة الطعام</a
+                  >
+                </li>
+                <li>
+                  <a class="hover-link relative" href="/cart" onclick="route()">
+                    <span
+                      id="cart-count-mobile"
+                      class="absolute -top-2 -left-4 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center"
+                      >0</span
+                    >السلة</a
+                  >
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
       </header>
@@ -59,10 +106,50 @@
       <div id="main"></div>
 
       <footer class="bg-primary font-semibold text-white text-center py-5">
-        <p>حقوق النشر &copy; 2023 كرم الشام</p>
+        <p>حقوق النشر © 2023 كرم الشام</p>
       </footer>
     </div>
     <script src="js/route.js" type="module"></script>
     <script src="js/data.js" type="module"></script>
+    <script>
+      // Menu toggle functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const cartCount = document.getElementById("cart-count");
+        const cartCountMobile = document.getElementById("cart-count-mobile");
+
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Sync cart counts
+        const syncCartCounts = () => {
+          cartCountMobile.textContent = cartCount.textContent;
+        };
+
+        // Update mobile cart count when main cart count changes
+        const observer = new MutationObserver(syncCartCounts);
+        observer.observe(cartCount, { childList: true, subtree: true });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target) &&
+            !mobileMenu.classList.contains("hidden")
+          ) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+
+        // Close menu after navigation
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
   </body>
 </html>

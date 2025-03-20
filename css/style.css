@@ -37,3 +37,12 @@
   width: fit-content;
   margin: 0 auto 50px;
 }
+
+.filter-btn {
+  background: #592f16;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}

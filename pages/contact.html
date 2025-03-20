@@ -6,6 +6,48 @@
     <title>CONTACT</title>
   </head>
   <body>
-    <h1>CONTACT</h1>
+    <div class="absolute top-0 w-full h-[500px]">
+      <img src="../images/contact.jpg" class="w-full h-full" alt="about" />
+    </div>
+
+    <div class="container max-w-3xl mx-auto p-10 mt-[400px]">
+      <form action="" class="flex flex-col gap-5">
+        <div class="flex flex-col gap-1">
+          <label class="text-lg" for="name">الاسم</label>
+          <input
+            class="p-3 rounded-2xl border-none bg-primary/50"
+            type="text"
+            id="name"
+            name="name"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <label class="text-lg" for="email">البريد الإلكتروني</label>
+          <input
+            class="p-3 rounded-2xl border-none bg-primary/50"
+            type="email"
+            id="email"
+            name="email"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <label class="text-lg" for="message">الرسالة</label>
+          <textarea
+            class="p-3 h-[150px] resize-none rounded-2xl border-none bg-primary/50"
+            id="message"
+            name="message"
+          ></textarea>
+        </div>
+
+        <button
+          class="cursor-pointer rounded-2xl bg-primary text-white font-semibold w-full p-3"
+          type="submit"
+        >
+          إرسال
+        </button>
+      </form>
+    </div>
   </body>
 </html>

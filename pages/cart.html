@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container my-10">
+      <h1 class="section-title">Your Cart</h1>
+
+      <!-- Cart Items -->
+      <div
+        id="cart-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+      ></div>
+
+      <!-- Total Price -->
+      <div class="mt-5 flex justify-between items-center">
+        <h2 class="text-xl font-bold">
+          Total: <span id="total-price">$0</span>
+        </h2>
+        <button id="checkout" class="btn bg-primary text-white p-3 rounded-xl">
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/cart.js"></script>
+  </body>
+</html>
